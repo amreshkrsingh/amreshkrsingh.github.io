@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>coin</title>
+<style type="text/css">
+.fLeft{float: left;}
+.b{border: 1px solid red;}
+@keyframes rotation {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  50% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+.coin {
+  position: relative;
+  border:1px solid blue;
+  top: 250px;
+  left: 250px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  animation-name: rotation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 2.5s;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+}
+.face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  backface-visibility: hidden;
+}
+.heads {
+  background-color: green;
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+.tails {
+  background-color: red;
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+
+
+
+#f1_container {
+  position: relative;
+  margin: 10px auto;
+  width: 450px;
+  height: 281px;
+  z-index: 1;
+}
+#f1_container {
+  perspective: 1000;
+}
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+}
+#f1_container:hover #f1_card {
+  transform: rotateY(180deg);  //You can also flip around the X and Z axes by changing rotateY to rotateX or rotateZ
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face2.back {
+  display: block;
+  transform: rotateY(180deg);   //You can also flip around the X and Z axes by changing rotateY to rotateX or rotateZ
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #aaa;
+}
+
+</style>
+<script type="text/javascript">
+	function alertName() {
+		var name = document.getElementById('te').value;
+		alert(name);
+		console.log(name);
+	}
+</script>
+</head>
+<body>
+  		<div class="coin">
+   			<div class="face heads">Hey!</div>
+    		<div class="face tails">Ho!</div>
+  		</div>
+
+
+
+  		<div id="f1_container">
+			<div id="f1_card" class="shadow">
+			  <div class="front face2"><img src="Cirques.jpg"/></div>
+			  <div class="back face2 center"><p>This is nice for exposing more information about an image.</p>.  //Flipping a simple image </div>
+			</div>
+		</div>
+
+	<div style="margin-left: 20px" class="fLeft b">
+	<!-- <form action="/action_page.php"> -->
+		<p>for give option to choose only one value</p>
+	  <select name="watch" id="te" >
+	    <option value="audi">Audi</option>
+	    <option value="saab">Saab</option>
+	    <option value="fiat">Fiat</option>
+	    <option value="amresh">ak</option>
+	  </select>
+	  <br><br>
+	  <input type="submit" onclick="alertName()">
+	<!-- </form> -->
+	</div>
+	<div style="margin-left: 10px" class="fLeft b">
+	<!-- <form action="/action_page.php"> -->
+		<p>for give option to choose multiple value <br>at a time use ctrl or command in mac</p>
+	  <select name="watch" id="te" size="4" multiple>
+	    <option value="audi">Audi</option>
+	    <option value="saab">Saab</option>
+	    <option value="fiat">Fiat</option>
+	    <option value="amresh">ak</option>
+	  </select>
+	  <br><br>
+	  <input type="submit" onclick="alertName()">
+	<!-- </form> -->
+	</div>
+	<div style="margin-left: 10px" class="fLeft b">
+		<p>input tag with some pridefined <br>valus to use or u can type your own</p>
+		<input list="browsers" name="browser">
+		  <datalist id="browsers">
+		    <option value="Internet Explorer">
+		    <option value="Firefox">
+		    <option value="Chrome">
+		    <option value="Opera">
+		    <option value="Safari">
+		  </datalist>
+		  <input type="submit">
+	</div>
+</body>
+</html>
