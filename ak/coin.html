@@ -90,6 +90,17 @@
   text-align: center;
   background-color: #aaa;
 }
+.r{color: red;}
+.zoho-reorder:before {
+  content: "\e9f5";
+}
+.xss{
+margin-left: 300px;
+  height: 100px;
+  width: 100px;
+}
+    .bb{background-color: wheat;}   
+.wait {cursor: wait;}
 
 </style>
 <script type="text/javascript">
@@ -98,9 +109,41 @@
 		alert(name);
 		console.log(name);
 	}
+
+  function myTest(){
+    var test = $k("#testId");
+//    if(test.classList.contains("r")){
+//      test.classList.remove("r");
+//    }else{
+//      test.classList.add("r");
+//    }
+    test.classList.toggle("r");
+    $k("#bbb").classList.toggle("wait");
+    console.log(test.innerHTML);
+  }
+  function $k(arg1){
+    if(arg1.startsWith("#")){
+      arg1 = arg1.substr(1);
+      return document.getElementById(arg1);
+    }
+    
+  }
+  var a = 10;
+  function outer(){
+    var b=a;
+    console.log(b);
+    (function (){
+      var  c = b;
+      console.log(c);
+      var b = 20;
+    })();
+  }
+  outer();
+  
+
 </script>
 </head>
-<body>
+<body class="bb"; id="bbb";>
   		<div class="coin">
    			<div class="face heads">Hey!</div>
     		<div class="face tails">Ho!</div>
@@ -127,7 +170,7 @@
 	  <br><br>
 	  <input type="submit" onclick="alertName()">
 	<!-- </form> -->
-	</div>
+	</div>   
 	<div style="margin-left: 10px" class="fLeft b">
 	<!-- <form action="/action_page.php"> -->
 		<p>for give option to choose multiple value <br>at a time use ctrl or command in mac</p>
@@ -141,6 +184,7 @@
 	  <input type="submit" onclick="alertName()">
 	<!-- </form> -->
 	</div>
+  <h1 id="testId">AMRESH KUMAR's  "JQUERY" TEST</h1>
 	<div style="margin-left: 10px" class="fLeft b">
 		<p>input tag with some pridefined <br>valus to use or u can type your own</p>
 		<input list="browsers" name="browser">
@@ -151,7 +195,27 @@
 		    <option value="Opera">
 		    <option value="Safari">
 		  </datalist>
-		  <input type="submit">
+		  <input type="button" onclick="myTest()" value="akTest">
 	</div>
+  <div style="margin-left: 10px" class="fLeft b"><input type="text" x-webkit-speech></div>
+  <div style="height: 100px;margin-top:200px; border: 1px solid;">
+    <div class="zoho-reorder"></div>
+  </div>
+<div class="xss" contenteditable="true" style="background: linear-gradient(315deg, rgb(0, 0, 0), rgb(0, 119, 255), rgb(255, 80, 255));"></div>
+<div class="xss" contenteditable="true" style="transform: rotate(45deg);  background: linear-gradient(315deg, rgb(0, 85, 221), rgb(0, 119, 255), rgb(255, 0, 5));"></div>
+
+    <span>you can edit in this div</span><br><br>
+<input id="name" placeholder="" name="email" max="2025-12-31" min="2018-1-31" required="" type="date">
+
+<select>
+  <optgroup label="project users" style="color: red;">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+  </optgroup>
+  <optgroup label="client users" style="colour: blue;">
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </optgroup>
+</select>
 </body>
 </html>
