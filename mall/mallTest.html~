@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mallTest</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas">
+	<script src="products.js"></script>
+	<script src="MallTestJs.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="mallTest.css">
+	
+	
+</head>
+<body>
+<div id = "allthing">
+	<div id="h"><h1>P & M mall Patna</h1></div>
+	<img src="viewcart.png"/ id="viewcart" onclick="myviewcart()">
+	<button class="buttonMain" onclick="myProduct(0)">Electronics</button>
+	<button class="buttonMain" onclick="myProduct(1)">Books</button>
+	<button class="buttonMain" onclick="myProduct(2)">Clothes</button>
+	<button class="buttonMain" style="float: none;" onclick="myProduct(3)">Wine</button>
+	<button class="buttonMain" style="float: none;" onclick="myProduct(4)">Resto Rent</button>
+	<div id="main">
+	</div>
+	<div id="showChart"><h1>*This is the chart *</h1></div>
+</div>
+	<div id="sideChart">
+		<h1><img id="l1"  src="back.gif" onclick="myPro()"/><img id="l2" src="submit.png"  onclick="myHome()"/></h1>
+		<div id="sidechartlist"></div>
+	</div>
+	<div id="addTOChart"></div>
+</body>
+</html>
+<!--var a= {"name":"mohan"}
+undefined
+a={"address":{"vill":"chainpur","po":"mirzapur"}}
+Object {address: Object}
+a.address.vill
+"chainpur"
+a={"address":{"vill":"chainpur","home":[12,13,14]}}
+Object {address: Object}
+a.address.home[0]
+12
+
+
+<img id="back"  src="Backbutton.gif" onclick="myback()"/><img id="AddToChart2" src="AddToChart.gif" onclick="AddToChart()" />
+
+window.location.reload() for refres the hole page.

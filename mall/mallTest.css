@@ -1,0 +1,209 @@
+		#allthing{
+			transition: all 2s;
+		}
+		h1{
+			font-size: 300%;
+			color: green;
+			font-family:"Mountains of Christmas";
+		}
+		h1:hover{color: red;}
+		#h{
+			width: 400px;
+			margin-left:440px;
+			float: left;
+		}
+		#viewcart{
+			height: 120px;
+			border-radius: 20%;
+		}
+		#viewcart:hover{
+			background-color: rgb(122,24,45);
+		}
+		.SmallimgAdd{
+			height: 100px;
+			width: 150px;
+			margin-left: 200px;
+		}
+		.SmallimgAdd:hover{
+			background-color: yellow;
+		}
+		.buttonMain{
+			transition: all .5s;
+			box-shadow: 15px 15px 15px grey;
+			height: 70px;
+			width: 220px;
+			float: left;
+			background-color: pink;
+			font-size: 200%;
+			border-radius: 10px;
+			margin: 10px;
+			margin-left:80px;
+		}
+		.buttonMain:hover{
+			background-color: red ;
+			color:white;
+		}
+		
+		#main{
+			margin-top: 136px;
+			position: absolute;
+			//height: 200px;
+			//width: 20px;
+			border:1px solid;
+			//margin-left: 40px;
+			background-color:rgb(11,342,34);
+			//display: none;
+		}
+		#showChart{
+			width: 400px;
+			border:2px solid green;
+			margin-left: 400px;
+			border-radius: 5px;
+			position: absolute;
+			background-color: yellow;
+			display: none;
+		}
+		.div{
+			//height:400px;
+			width: 350px;
+			border:1px solid;
+			margin: 20px;
+			float: left;
+			margin-left: 33px;
+			background-color: rgb(223,157,224);
+		}
+		.name{
+			height:40px;
+			width: 340px;
+			border:1px solid red;
+			margin: 5px;
+			color: red;
+			background-color: rgb(112, 49, 105);
+			text-align: center;
+			font-color:red;
+			font-size: 170%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		img{
+			height: 255px;
+			width: 255px;
+			margin-left: 55px;
+			margin-top: 10px;
+			border-radius: 5px;
+		}
+		.bigimg{
+			float: left;
+			height: 320px;
+			width: 275px;
+			//margin-left: 382px;
+			margin-top: 5px;
+			border-radius: 1px;
+		}
+		.im1{
+			height: 255px;
+			width: 180px;
+			margin-left: 85px;
+		}
+		.im2{
+			height: 300px;
+			width: 300px;
+			margin-left: 20px;
+			border-radius: 50%;
+			border:5px solid blue;
+		}
+		#sideChart{
+			position: absolute;
+			border-radius: 5px;
+			width: 800px;
+			border:1px solid;
+			left: -800px;
+			top:20px;
+			transition: all 2s;
+		}
+		#l1{
+			position: relative;
+			height: 100px;
+			width: 100px;
+			//left: 200px;
+		}
+		#l2{
+			position: relative;
+			height: 100px;
+			width: 100px;
+			left: 450px;
+		}
+		#back{
+			position: relative;
+			height: 100px;
+			width:150px;
+			//height: 30px;
+			left: 0px;
+			transition: 0.5s;
+		}
+		#back:hover{background-color: red;}
+		#AddToChart2{
+			position: relative;
+			height: 100px;
+			width:150px;
+			left: 230px;
+			transition: 0.5s;
+		}
+		#AddToChart2:hover{background-color: red;}
+		.chartsDiv{
+			height: 35px;
+			width: 198px;
+			border:1px solid red;
+			float: left;
+		}
+		.divak{
+			position: absolute;
+			border:1px solid;
+			width:700px;
+			background-color: rgb(35, 247, 7);
+		}
+		.d{
+			margin-top: 40px;
+			margin-left: 20px;
+		}
+		#addTOChart{
+			position: absolute;
+			transition: all 2s;
+			width: 700px;
+			border:4px solid green;
+			left: -1000px;
+			top:400px;
+		}
+		.totalPrice{
+			border:1px solid green;
+			font-size: 200%;
+			color: red;
+			text-align: center;
+			background-color: rgb(56,153,42);
+		}
+		#Electronics{
+			margin-top: 156px;
+		    margin-left: -1049px;
+		    position: absolute;
+		}
+		#Books {
+		    position: absolute;
+		    margin-top: 156px;
+		    margin-left: -728px;
+		}
+		#Clothes{
+			position: absolute;
+		    margin-top: 156px;
+		    margin-left: -389px;
+		}
+		#Wine{
+			position: absolute;
+		    margin-top: 156px;
+		    margin-left: -62px;
+		}
+		#RestoRent{
+			position: absolute;
+		    margin-top: 156px;
+		    margin-left: 244px;
+		}

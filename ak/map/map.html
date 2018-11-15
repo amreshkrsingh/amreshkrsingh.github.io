@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>map</title>
+<!--	<link rel="stylesheet" type="text/css" href="jquery-3.2.1.js">-->
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        function myfunc(){
+            var n = $("#val").val();
+            console.log(n);
+            alert(n);
+        }
+    
+    </script>
+</head>
+<body>
+
+	<p>Click on the sun or on one of the planets to watch it closer:</p>
+
+	<img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+	<map name="planetmap">
+	  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.gif">
+	  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.gif">
+	  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.gif">
+	</map>
+	<form action="/action_page.php">
+	  Select your favorite color:
+	  <input type="color" name="favcolor" value="#ff0000">
+	  <input type="submit">
+	</form>
+    
+    <form action="/action_page.php">
+      Birthday:
+      <input type="date" name="bday">
+      <input type="submit">
+    </form>
+    
+    <br>
+    <br>
+    <form action="/action_page.php">
+      Enter your amount(between -10 and 10000):
+      <input type="number" name="quantity" min="-10" max="10000">
+      <input type="submit">
+    </form>
+    
+    <div>
+      [Range] Points :
+      <input type="range" name="points" min="0" max="3" id="val">
+      <input type="submit" onclick="myfunc()">
+    </div>
+    <hr>
+    <br>
+    <p>The <strong>input type="search"</strong> is used for search fields (behaves like a regular text field):</p>
+    <div>
+      Search Google:
+      <input type="search" name="googlesearch">
+      <input type="submit">
+    </div>
+    <hr>
+    <h2>The readonly Attribute</h2>
+    <p>The readonly attribute specifies that the input field is read only (cannot be changed):</p>
+    <form action="">
+    First name:
+    <input type="text" name="firstname" value ="readonly" readonly>
+    Mid Name:<input type="text" name="firstname" value ="disabled" disabled>
+    Last name:<input type="text" name="lastname" autofocus placeholder="autofocus">
+    sex<input type="text" name="sex" maxlength="1" placeholder="maxlength='1'">
+   address : <input type="text" name="add" size="50" placeholder="size='50'">
+    
+    
+    </form>
+
+
+
+</body>
+</html>
