@@ -1,0 +1,145 @@
+<html>
+ 	<head>
+ 		<title>TICK </title>
+ 		<style>
+ 			#h1{
+ 				background-color:red;
+ 				color:white;
+ 				font-size:200%;
+ 			}
+ 			#a1{
+ 				height:60px;
+ 				text-align:center;
+ 				font-size:300%;
+ 				color:green;
+ 				//border:1px solid red;
+ 			}
+ 			#a{
+ 				float:left;
+ 				height:265;
+ 				width:265px;
+ 				border:5px solid yellow;
+ 				margin-left:500px;
+ 				margin-top:100px;
+ 				background-attachment:fixed;
+ 			}
+ 			#b{
+ 				margin-left:-400px;
+ 				height:45px;
+ 				width:100px;
+ 				text-align:center;
+ 				color:red;
+ 				border:3px solid green;
+ 				margin-top:25px;
+ 				border-radius: 20%;
+ 			}
+ 			#b2{
+ 				margin-left:330px;
+ 				height:45px;
+ 				width:100px;
+ 				text-align:center;
+ 				color:red;
+ 				border:3px solid green;
+ 				border-radius: 20%;
+ 			}
+ 			.c{
+ 				height:80px;
+ 				margin:2px;
+ 				//padding:4px;
+ 				width:80px;
+ 				border:2px solid red;
+ 				float:left;
+ 			}
+ 		</style>
+ 		<script>
+ 		var num1 = [["d1","d2","d3"],["d4","d5","d6"],["d7","d8","d9"],["d1","d4","d7"],["d2","d5","d8"],["d3","d6","d9"],["d1","d5","d9"],["d3","d5","d7"]];
+ 		var win = false;
+		function mycheck(color){
+ 			for(var i=0 ; i<num1.length ; i++){
+ 				var temp = 0;
+ 				for(var j=0 ; j<num1[0].length ; j++){
+ 					if(document.getElementById(num1[i][j]).style.backgroundColor === color){
+ 						temp++;
+ 					}
+ 				}
+ 				if(temp === 3){
+ 					win = true;
+ 					if(color === "yellow"){
+ 					   document.getElementById("a1").innerHTML="YOU ARE THE WINNER !";
+ 					}
+ 					if(color === "red"){
+ 						document.getElementById("a1").innerHTML="YOU LOSE!";
+ 					}
+ 				return temp;
+ 				}
+ 				if(Object.keys(completed).length == 9 && !win){
+ 					document.getElementById("a1").innerHTML="DRAW";
+ 				}
+ 				
+ 			}
+ 		}
+ 			var completed={};
+ 		function myfunc(boxId){
+	 		if(!completed.hasOwnProperty(boxId) && !win){
+	 			completed[boxId]=true;
+	 			document.getElementById(boxId).style.backgroundColor="yellow";
+	 			mycheck("yellow");
+	 			if(Object.keys(completed).length < 9){
+	 				if(mycheck("yellow")!==3){
+	 					fillByPc();
+	 				}
+	 			}else{
+	 				if(!win){
+	 				 	document.getElementById("a1").innerHTML="DRAW";
+	 				}
+	 			}
+	 		}
+ 		}
+ 		function fillByPc(){
+ 			document.getElementById("b").disabled=true;
+ 			while(true){
+ 				var rand = Math.round(Math.random()*9);
+ 				if(rand != 0 && !completed.hasOwnProperty("d"+rand)){
+	 				var key = "d"+rand;
+	 				completed[key]=true;
+		 			document.getElementById(key).style.backgroundColor="red";
+		 			mycheck("red");
+		 			break;
+	 			}
+ 			}
+ 		}
+ 		
+ 		function reset(){
+ 			completed={};
+ 			win = false;
+ 			document.getElementById("b2").disabled=false;
+ 			for (var i = 1; i <= 9; i++) {
+ 				document.getElementById("d"+i).style.backgroundColor="white";
+ 			}
+ 			fillByPc();
+		}
+ 		
+	</script>
+ 	</head>
+ 	<body>
+ 		<h1 id="h1"><marquee>TICK TACKK TO</marquee></h1>
+ 		<div id = "a1"></div>
+ 		<div id="a" class="a">
+ 			<div id="d1" class="c" onclick="myfunc(this.id)"></div>
+ 			<div id="d2" class="c" onclick="myfunc(this.id)"></div>
+ 			<div id="d3" class="c" onclick="myfunc(this.id)"></div>
+ 			<div id="d4" class="c" onclick="myfunc(this.id)"></div>
+ 			<div id="d5" class="c" onclick="myfunc(this.id)"></div>
+ 			<div id="d6" class="c" onclick="myfunc(this.id)"></div>
+ 			<div id="d7" class="c" onclick="myfunc(this.id)"></div>
+ 			<div id="d8" class="c" onclick="myfunc(this.id)"></div>
+ 			<div id="d9" class="c" onclick="myfunc(this.id)"></div>
+ 		</div>
+ 			<button id ="b" onclick="fillByPc()">START</button>
+
+ 			<button id ="b2" onclick="reset()">RESTART</button>
+ 	</body>
+ 	
+
+
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mallTest</title>
+	<!--<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas">-->
+	<script src="products.js"></script>
+	<style type="text/css">
+		#allthing{
+			transition: all 2s;
+		}
+		h1{
+			font-size: 300%;
+			color: green;
+			font-family:"Mountains of Christmas";
+		}
+		h1:hover{color: red;}
+		#h{
+			width: 400px;
+			margin-left:440px;
+			float: left;
+		}
+		#viewcart{
+			height: 120px;
+			border-radius: 20%;
+		}
+		#viewcart:hover{
+			background-color: rgb(122,24,45);
+		}
+		.SmallimgAdd{
+			height: 100px;
+			width: 150px;
+			margin-left: 200px;
+		}
+		.SmallimgAdd:hover{
+			background-color: yellow;
+		}
+		.buttonMain{
+			transition: all .5s;
+			box-shadow: 15px 15px 15px grey;
+			height: 70px;
+			width: 220px;
+			float: left;
+			background-color: pink;
+			font-size: 200%;
+			border-radius: 10px;
+			margin: 10px;
+			margin-left:80px;
+		}
+		.buttonMain:hover{
+			background-color: red ;
+			color:white;
+		}
+		
+		#main{
+			position: absolute;
+			//height: 200px;
+			//width: 20px;
+			border:1px solid;
+			//margin-left: 40px;
+			background-color:rgb(11,342,34);
+			//display: none;
+		}
+		#showChart{
+			width: 400px;
+			border:2px solid green;
+			margin-left: 400px;
+			border-radius: 5px;
+			position: absolute;
+			background-color: yellow;
+			display: none;
+		}
+		.div{
+			//height:400px;
+			width: 350px;
+			border:1px solid;
+			margin: 20px;
+			float: left;
+			margin-left: 33px;
+			background-color: rgb(223,157,224);
+		}
+		.name{
+			height:40px;
+			width: 340px;
+			border:1px solid red;
+			margin: 5px;
+			color: red;
+			background-color: rgb(112, 49, 105);
+			text-align: center;
+			font-color:red;
+			font-size: 170%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		img{
+			height: 255px;
+			width: 255px;
+			margin-left: 55px;
+			margin-top: 10px;
+			border-radius: 5px;
+		}
+		.bigimg{
+			float: left;
+			height: 320px;
+			width: 275px;
+			//margin-left: 382px;
+			margin-top: 5px;
+			border-radius: 1px;
+		}
+		.im1{
+			height: 255px;
+			width: 180px;
+			margin-left: 85px;
+		}
+		.im2{
+			height: 300px;
+			width: 300px;
+			margin-left: 20px;
+			border-radius: 50%;
+			border:5px solid blue;
+		}
+		#sideChart{
+			position: absolute;
+			border-radius: 5px;
+			width: 800px;
+			border:1px solid;
+			left: -800px;
+			top:20px;
+			transition: all 2s;
+		}
+		#l1{
+			position: relative;
+			height: 100px;
+			width: 100px;
+			//left: 200px;
+		}
+		#l2{
+			position: relative;
+			height: 100px;
+			width: 100px;
+			left: 450px;
+		}
+		#back{
+			position: relative;
+			height: 100px;
+			width:150px;
+			//height: 30px;
+			left: 0px;
+			transition: 0.5s;
+		}
+		#back:hover{background-color: red;}
+		#AddToChart2{
+			position: relative;
+			height: 100px;
+			width:150px;
+			left: 230px;
+			transition: 0.5s;
+		}
+		#AddToChart2:hover{background-color: red;}
+		.chartsDiv{
+			height: 35px;
+			width: 198px;
+			border:1px solid red;
+			float: left;
+		}
+		.divak{
+			position: absolute;
+			border:1px solid;
+			width:700px;
+			background-color: rgb(35, 247, 7);
+		}
+		.d{
+			margin-top: 40px;
+			margin-left: 20px;
+		}
+		#addTOChart{
+			position: absolute;
+			transition: all 2s;
+			width: 700px;
+			border:4px solid green;
+			left: -1000px;
+			top:400px;
+		}
+		.totalPrice{
+			border:1px solid green;
+			font-size: 200%;
+			color: red;
+			text-align: center;
+			background-color: rgb(56,153,42);
+		}
+	</style>
+	<script type="text/javascript">
+		//var l = products.length;
+		//console.log(l);
+		//console.log(products[0].items.length);
+		function myProduct(categoryId){
+			document.getElementById('allthing').style.opacity="1";
+			document.getElementById('main').style.display="block";
+			document.getElementById('showChart').style.display="none";
+			var parent = document.getElementById('main');
+			parent.innerHTML = "";
+			for(var i = 0; i<products[categoryId].items.length; i++){
+				var data = products[categoryId].items[i];
+				var di = document.createElement("div");	
+				di.setAttribute("class","div");
+				if(data.image != undefined){
+					var image= document.createElement("img");
+					image.setAttribute("src",data.image);
+					if(categoryId == 1){
+						image.setAttribute("class","im1");
+					}
+					if(categoryId == 3){
+						image.setAttribute("class","im2");
+					}
+					di.appendChild(image);
+				}
+				var smallImg = document.createElement("img");
+				smallImg.data = data;
+				smallImg.setAttribute("src","shoppy.png");
+				smallImg.setAttribute("class","SmallimgAdd");
+				//smallImg.addEventListener("onclick",myAdd(data),i,false);
+				smallImg.setAttribute("onclick","selctProduct(this.data)");
+				di.appendChild(smallImg);
+				if(data.discount != undefined){
+					var disc = document.createElement("div");
+					disc.setAttribute("class","name");
+					disc.innerText = "Discount up to : "+data.discount;
+					di.appendChild(disc);
+				}
+				//niche ka pid kewal Wine me hai usi ke liye yah hai
+				//Belows pid for wine only
+				if(data.pid != undefined){
+					var pid= document.createElement("div");
+					pid.setAttribute("class","name");
+					pid.innerText = "pid-"+data.pid;
+					di.appendChild(pid);
+				}
+				if(data.author != undefined){
+					var author= document.createElement("div");
+					author.setAttribute("class","name");
+					author.innerText = "author-"+data.author;
+					di.appendChild(author);
+				}
+				if(data.name != undefined){
+					var name= document.createElement("div");
+					name.setAttribute("class","name");
+					name.innerText = "Name-"+data.name;
+					di.appendChild(name);
+				}
+				if(data.brand != undefined){
+					var brand= document.createElement("div");
+					brand.setAttribute("class","name");
+					brand.setAttribute("title",data.brand);
+					brand.innerText = "Brand-"+data.brand;
+					di.appendChild(brand);
+				}
+				if(data.price != undefined){
+					var price= document.createElement("div");
+					price.setAttribute("class","name");
+					price.innerText = "Price - "+data.price + " $";
+					di.appendChild(price);
+				}
+				parent.appendChild(di);
+				//parent.insertBefore(di,parent.firstChild);
+			}
+		}
+		function selctProduct(data){
+			document.getElementById('allthing').style.opacity="0.3";
+			document.getElementById('addTOChart').style.left =300+"px";
+			//document.getElementByclass('divak').style = "";
+			document.getElementById('addTOChart').innerHTML = "";
+			if(document.getElementById("back") == null){
+				var im1 = document.createElement("img");
+				im1.setAttribute("src","Backbutton.gif");
+				im1.setAttribute("id","back");
+				im1.setAttribute("onclick","myback()");
+				addTOChart.appendChild(im1);
+			}
+			if(document.getElementById("AddToChart2") == null){
+				var im2 = document.createElement("img");
+				im2.setAttribute("src","AddToChart.gif");
+				im2.data = data;
+				im2.setAttribute("id","AddToChart2");
+				im2.setAttribute("onclick","AddToChart(this.data)");
+				addTOChart.appendChild(im2);
+			}
+			var di = document.createElement("div");
+			di.setAttribute("class","divak");
+			if(data.image != undefined){
+					var image= document.createElement("img");
+					image.setAttribute("src",data.image);
+					image.setAttribute("class","bigimg");
+					di.appendChild(image);
+				}
+				if(data.discount != undefined){
+					var disc = document.createElement("div");
+					disc.setAttribute("class","name");
+					disc.innerText = "Discount up to : "+data.discount;
+					di.appendChild(disc);
+				}
+				//niche ka pid kewal Wine me hai usi ke liye yah hai
+				//Belows pid for wine only
+				if(data.pid != undefined){
+					var pid= document.createElement("div");
+					pid.setAttribute("class","name");
+					pid.innerText = "pid-"+data.pid;
+					di.appendChild(pid);
+				}
+				if(data.author != undefined){
+					var author= document.createElement("div");
+					author.setAttribute("class","name");
+					author.innerText = "author-"+data.author;
+					di.appendChild(author);
+				}
+				if(data.name != undefined){
+					var name= document.createElement("div");
+					name.setAttribute("class","name");
+					name.innerText = "Name-"+data.name;
+					di.appendChild(name);
+				}
+				if(data.brand != undefined){
+					var brand= document.createElement("div");
+					brand.setAttribute("class","name");
+					brand.setAttribute("title",data.brand);
+					brand.innerText = "Brand-"+data.brand;
+					di.appendChild(brand);
+				}
+				if(data.price != undefined){
+					var price= document.createElement("div");
+					price.setAttribute("class","name");
+					price.innerText = "Price - "+data.price + " $";
+					di.appendChild(price);
+				}
+				var quantity = document.createElement("input");
+					quantity.setAttribute("class","name");
+					quantity.setAttribute("placeholder","enter the quantity");
+					quantity.setAttribute("Type","number");
+					quantity.setAttribute("id","quantity");
+					di.appendChild(quantity);
+				
+				addTOChart.appendChild(di);
+			//addTOChart.appendChild(div);
+		}
+
+		function myback(){
+			document.getElementById('allthing').style.opacity="1";
+			document.getElementById('addTOChart').style.left =-800+"px";
+		}
+
+		information = [];
+		function AddToChart(data){
+			data.quantity = document.getElementById('quantity').value;
+			information.push(data);
+			console.log(information);
+			document.getElementById('allthing').style.opacity="1";
+			document.getElementById('addTOChart').style.left =-720+"px";
+		}
+
+		function myviewcart(){
+			//document.getElementById("showChart").style.display="block";
+			document.getElementById('allthing').style.display="none";
+			document.getElementById('sideChart').style.left =250+"px";
+			document.getElementById('sidechartlist').innerHTML = "";
+			console.log(information.length);
+			var total = 0;
+			for(var i = 0; i<=information.length-1; i++){
+				var d = document.createElement("div");
+
+				var serial = document.createElement("div");
+				serial.setAttribute("class","chartsDiv");
+				if(information[i].name != undefined){
+					serial.innerText = "Name : "+information[i].name;
+				}else{
+					serial.innerText = "----";
+				}
+				d.appendChild(serial);
+
+				serial = document.createElement("div");
+				serial.setAttribute("class","chartsDiv");
+				if(information[i].discount != undefined){
+					serial.innerText = "discount : "+information[i].discount;
+				}else{
+					serial.innerText = "----";
+				}
+				d.appendChild(serial);
+
+				serial = document.createElement("div");
+				serial.setAttribute("class","chartsDiv");
+				if(information[i].price != undefined){
+					serial.innerText = "price : "+information[i].price;
+					if (information[i].discount != undefined) {
+						total += (+information[i].price)-((+information[i].price) * ((+information[i].discount.replace("%",""))/100)) ;
+					}else{
+						total += +information[i].price;
+					}
+				}else{
+					serial.innerText = "----";
+				}
+				d.appendChild(serial);
+
+				serial = document.createElement("div");
+				serial.setAttribute("class","chartsDiv");
+				if(information[i].quantity != undefined){
+					serial.innerText = "quantity : "+information[i].quantity;
+				}else{
+					serial.innerText = "----";
+				}
+				d.appendChild(serial);
+
+				document.getElementById('sidechartlist').appendChild(d);
+			}
+			if (information.length>0) {
+				totalPrice = document.createElement("div");
+				totalPrice.innerText ="Total Price : " +total;
+				totalPrice.setAttribute("class","totalPrice")
+				d.appendChild(totalPrice);
+			}
+		}
+		function myPro(){
+			document.getElementById('sideChart').style.left =-850+"px";
+			document.getElementById('allthing').style.display="block";
+		}
+		function myHome(){
+			window.location.reload();
+		}
+	</script>
+</head>
+<body>
+<div id = "allthing">
+	<div id="h"><h1>P & M mall Patna</h1></div>
+	<img src="viewcart.png"/ id="viewcart" onclick="myviewcart()">
+	<button class="buttonMain" onclick="myProduct(0)">Electronics</button>
+	<button class="buttonMain" onclick="myProduct(1)">Books</button>
+	<button class="buttonMain" onclick="myProduct(2)">Clothes</button>
+	<button class="buttonMain" style="float: none;" onclick="myProduct(3)">Wine</button>
+	<button class="buttonMain" style="float: none;" onclick="myProduct(4)">Resto Rent</button>
+	<div id="main">
+	</div>
+	<div id="showChart"><h1>*This is the chart *</h1></div>
+</div>
+	<div id="sideChart">
+		<h1><img id="l1"  src="back.gif" onclick="myPro()"/><img id="l2" src="submit.png"  onclick="myHome()"/></h1>
+		<div id="sidechartlist"></div>
+	</div>
+	<div id="addTOChart"></div>
+</body>
+</html>
+<!--var a= {"name":"mohan"}
+undefined
+a={"address":{"vill":"chainpur","po":"mirzapur"}}
+Object {address: Object}
+a.address.vill
+"chainpur"
+a={"address":{"vill":"chainpur","home":[12,13,14]}}
+Object {address: Object}
+a.address.home[0]
+12
+
+
+<img id="back"  src="Backbutton.gif" onclick="myback()"/><img id="AddToChart2" src="AddToChart.gif" onclick="AddToChart()" />
+
+window.location.reload() for refres the hole page.

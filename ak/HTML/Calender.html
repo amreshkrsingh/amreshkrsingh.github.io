@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calender</title>
+	<style type="text/css">
+		#main1{
+			position: relative;
+			width: 510px;
+			height: 50px;
+			//border:1px solid;
+			margin:auto;
+			margin-top: 8px;
+			padding: 10px;
+		}
+		#main2{
+			width: 510px;
+			height: 380px;
+ 			margin:auto;
+			margin-top:-500px;
+			
+
+
+		}
+		.small{
+			font-size: 25px;
+			height: 40px;
+			width: 50px;
+			float: left;
+			border:1px solid;
+			padding: 10px;
+			text-align: center;
+		}
+		.d{
+			font-size: 30px;
+			height: 40px;
+			width: 50px;
+			float: left;
+			border:1px solid;
+			padding: 10px;
+			text-align: center;
+			background-color: rgb(6,131,193);
+		}
+		#m{
+			height: 50px;
+		    width: 90px;
+		    //border: 1px solid red;
+		    margin-left: 719px;
+		    margin-top: 260px;
+		    position: absolute;
+		    font-size: 200%;
+		    text-align: center;
+		    color:red;
+		}
+		#Year {
+		    height: 50px;
+		    width: 90px;
+		    //border: 1px solid red;
+		    margin-left: 997px;
+		    margin-top: -40px;
+		    position: absolute;
+		    font-size: 200%;
+		    text-align: center;
+		    color: red;
+		}
+		#month{
+			position: absolute;
+		    margin-top: 265px;
+		    margin-left: 819px;
+		    height: 40px;
+		    width: 43px;
+		    font-size: 100%;
+		    border-radius: 50%;
+		}
+		#monthprivious{
+			position: relative;
+		    margin-top: 265px;
+		    margin-left: 672px;
+		    height: 40px;
+		    width: 43px;
+		    font-size: 100%;
+		    border-radius: 50%;
+		}
+		#ynig {
+			    position: absolute;
+			    margin-top: 265px;
+			    margin-left: 237px;
+			    height: 40px;
+			    width: 43px;
+			    font-size: 100%;
+			    border-radius: 50%;
+		}
+		#ypos {
+		    position: absolute;
+		    margin-top: 266px;
+		    margin-left: 376px;
+		    height: 40px;
+		    width: 43px;
+		    font-size: 100%;
+		    border-radius: 50%;
+		}
+
+	</style>
+	
+</head>
+<body onload="myfun()">
+	<button onclick="monthplus()" id="month">-></button>
+	<div id="m"></div>
+	<button onclick="monthminus()" id="monthprivious"><-</button>
+	
+	
+	<button onclick="yearminus()" id="ynig"><-</button>
+	<div id="Year"></div>
+	<button onclick="yearhplus()" id="ypos">-></button>
+	
+
+
+	<div id="main1">
+		<div class="d">Sun</div>
+		<div class="d">Mon</div>
+		<div class="d">Tue</div>
+		<div class="d">Wed</div>
+		<div class="d">Tue</div>
+		<div class="d">Fri</div>
+		<div class="d">Sat</div>
+	</div>
+	<div id="main2"></div>
+</body>
+<script type="text/javascript">
+var date;
+var din;
+		function myfun() {
+			var str = "";
+			var r = 1;
+			for (var i = 1; i <= 42; i++) {
+				if(i==r){
+					str+="<div class='small' id='"+i+"' style='color:red;background-color:rgb(255,185,206);'></div>";
+					r+=7;
+				}else{
+					str+="<div class='small' id='"+i+"'style='color:red;background-color:rgb(131,249,254);' ></div>";
+				}
+			}
+			
+			document.getElementById('main2').innerHTML = str;
+			date = new Date();
+			din = date.getDate();
+			getmonthlycalender(date);
+		}
+		function getmonthlycalender(date){
+			var divs = document.getElementsByClassName('small');//it return array of dives
+			for (var i = 0; i < divs.length; i++) {
+				divs[i].innerHTML = "";
+				divs[i].style.color = "black";
+				divs[i].style.fontSize="300%";
+			}
+			
+			var ak = date.toString();
+			var aa = ak.substr(4,3);
+			var a = ak.substr(11,4);
+			console.log(a);
+			document.getElementById("m").innerHTML=aa;
+			document.getElementById("Year").innerHTML=a;
+
+			date.setDate(1);
+			var start = date.getDay()+1;//it return sun=0,mon=1 and so on; us din se date bharna startKarenge
+			var n = 29;
+			for (var i = 0; i <3; i++){
+				date.setDate(n);
+				if(date.getDate()!=1){
+					n++;
+				}else{
+					//console.log("Before"+date.getMonth());
+					date.setMonth(date.getMonth()-1);
+					///console.log("After"+date.getMonth());
+					break;
+				}
+			}
+			var end = n;
+			fill(start,end);
+		}
+		
+		function fill(start,end){
+			var a = start;
+			// alert(start+"  "+end);
+			for (var i = 1; i < end; i++) {
+				document.getElementById(start).innerHTML = i;
+				start++;
+			}
+			
+				//console.log(din+a);
+			for (var i = 1; i < end; i++) {
+				//console.log(i);
+				if (i==((din+a)-1)) {   //yaha pe jo array time start me jo 1 add kiye the phir ghatana hai
+						//console.log("hi "+i);							//aur a suru ke gaip din(atart) hai
+								
+					document.getElementById(i).style.color="red";
+					document.getElementById(i).style.fontSize="300%";
+					//ya niche wala bhi use kar sakte hai.
+					//document.getElementById(i).style.backgroundColor="green";
+				}
+			}
+		}
+		function monthplus(){
+			date.setDate(1);
+			date.setMonth(date.getMonth()+1);
+			getmonthlycalender(date);
+		}
+		function monthminus(){
+			date.setDate(1);
+			date.setMonth(date.getMonth()-1);
+			getmonthlycalender(date);
+		}
+		function yearhplus(){
+			date.setDate(1);
+			date.setYear(date.getFullYear()+1);
+			getmonthlycalender(date);
+		}
+		function yearminus(){
+			date.setDate(1);
+			date.setYear(date.getFullYear()-1);
+			getmonthlycalender(date);
+		}
+	</script>
+</html>

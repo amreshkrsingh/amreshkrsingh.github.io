@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>7 Segments</title>
+	</head>
+	<style type="text/css">
+		html,*{
+			box-sizing:border-box;
+		}
+		body{
+			background:hotpink;
+		}
+		#box1{
+			margin-left:150px;
+		}
+		#box9{
+			margin-left:150px;
+		}
+		.box{
+			width:120px;
+			height:120px;
+			border:1px solid black;
+			margin-top:100px;
+			background:white;
+			position:relative;
+			float: left;
+			font-size: 100px;
+		}
+		
+		.sb1{
+			background-size: 100% 100%;
+			background-image:url("ubt.jpg");
+			width:31%;
+			height:10%;
+			top:10%;
+			left:30%;
+			position:absolute;
+			opacity:1; 
+		}
+		.sb6{
+			background-size: 100% 100%;
+			background-image:url("rst.jpg");
+			width:10%;
+			height:31%;
+			top:18%;
+			left:22%;
+			position:absolute;
+			opacity:1; 
+		}
+		.sb5{
+			background-size: 100% 100%;
+			background-image:url("rust.jpg");
+			width:10%;
+			height:31%;
+			top:53%;
+			left:22%;
+			position:absolute;
+			opacity:1; 
+		}
+		.sb2{
+			background-size: 100% 100%;
+			background-image:url("lst.jpg");
+			width:10%;
+			height:31%;
+			top:18%;
+			left:57%;
+			position:absolute;
+			opacity:1; 
+		}
+		.sb3{
+			background-size: 100% 100%;
+			background-image:url("lust.jpg");
+			width:10%;
+			height:31%;
+			top:51%;
+			left:57%;
+			position:absolute;
+			opacity:1; 
+		}
+		.sb7{
+			background-size: 100% 100%;
+			background-image:url("ubt.jpg");
+			width:26%;
+			height:10%;
+			top:44%;
+			left:30%;
+			position:absolute;
+			opacity:0; 
+		}
+
+		.sb4{
+			background-size: 100% 100%;
+			background-image:url("bbt.jpg");
+			width:26%;
+			height:10%;
+			top:80%;
+			left:30%;
+			position:absolute;
+			opacity:1; 
+		}
+	</style>
+	<body onload="run()" onload="cdate()" >
+	<div>
+	<!--<input type="button" onclick="run()" value="start">-->
+	<div id="box1" class="box">
+		<div id="hb1" class="sb1"></div>
+		<div id="hb2" class="sb2"></div>
+		<div id="hb3" class="sb3"></div>
+		<div id="hb4" class="sb4"></div>
+		<div id="hb5" class="sb5"></div>
+		<div id="hb6" class="sb6"></div>
+		<div id="hb7" class="sb7"></div>
+	</div>
+	<div id="box2" class="box">
+		<div id="hb1,1" class="sb1"></div>
+		<div id="hb2,2" class="sb2"></div>
+		<div id="hb3,3" class="sb3"></div>
+		<div id="hb4,4" class="sb4"></div>
+		<div id="hb5,5" class="sb5"></div>
+		<div id="hb6,6" class="sb6"></div>
+		<div id="hb7,7" class="sb7"></div>
+	</div>
+	<div id="box3" class="box" style="width:50px;
+			height:120px;"">
+		<div style="opacity:1;width:90%;left:10%;" class="sb7"></div>
+	</div>
+	<div id="box4" class="box">
+		<div id="mb1" class="sb1"></div>
+		<div id="mb2" class="sb2"></div>
+		<div id="mb3" class="sb3"></div>
+		<div id="mb4" class="sb4"></div>
+		<div id="mb5" class="sb5"></div>
+		<div id="mb6" class="sb6"></div>
+		<div id="mb7" class="sb7"></div>
+	</div>
+	<div id="box5" class="box">
+		<div id="mb1,1" class="sb1"></div>
+		<div id="mb2,2" class="sb2"></div>
+		<div id="mb3,3" class="sb3"></div>
+		<div id="mb4,4" class="sb4"></div>
+		<div id="mb5,5" class="sb5"></div>
+		<div id="mb6,6" class="sb6"></div>
+		<div id="mb7,7" class="sb7"></div>
+	</div>
+	<div id="box6" class="box" style="width:50px;
+			height:120px;"">
+		<div style="opacity:1;width:90%;left:10%;" class="sb7"></div>
+	</div>
+	<div id="box7" class="box">
+		<div id="sb1" class="sb1"></div>
+		<div id="sb2" class="sb2"></div>
+		<div id="sb3" class="sb3"></div>
+		<div id="sb4" class="sb4"></div>
+		<div id="sb5" class="sb5"></div>
+		<div id="sb6" class="sb6"></div>
+		<div id="sb7" class="sb7"></div>
+	</div>
+	<div id="box8" class="box">
+		<div id="sb1,1" class="sb1"></div>
+		<div id="sb2,2" class="sb2"></div>
+		<div id="sb3,3" class="sb3"></div>
+		<div id="sb4,4" class="sb4"></div>
+		<div id="sb5,5" class="sb5"></div>
+		<div id="sb6,6" class="sb6"></div>
+		<div id="sb7,7" class="sb7"></div>
+	</div>
+	<div id="box11" class="box">
+		
+	</div>
+	<div id="box22" class="box">
+		M
+	</div>
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<div id="box9" class="box">
+		<div id="d1" class="sb1"></div>
+		<div id="d2" class="sb2"></div>
+		<div id="d3" class="sb3"></div>
+		<div id="d4" class="sb4"></div>
+		<div id="d5" class="sb5"></div>
+		<div id="d6" class="sb6"></div>
+		<div id="d7" class="sb7"></div>
+	</div>
+	<div id="box10" class="box">
+		<div id="d1,1" class="sb1"></div>
+		<div id="d2,2" class="sb2"></div>
+		<div id="d3,3" class="sb3"></div>
+		<div id="d4,4" class="sb4"></div>
+		<div id="d5,5" class="sb5"></div>
+		<div id="d6,6" class="sb6"></div>
+		<div id="d7,7" class="sb7"></div>
+	</div>
+	<div id="box3" class="box" style="width:50px;
+			height:120px;"">
+		<div style="opacity:1;width:90%;left:10%;" class="sb7"></div>
+	</div>
+	<div id="box11" class="box">
+		<div id="mm1" class="sb1"></div>
+		<div id="mm2" class="sb2"></div>
+		<div id="mm3" class="sb3"></div>
+		<div id="mm4" class="sb4"></div>
+		<div id="mm5" class="sb5"></div>
+		<div id="mm6" class="sb6"></div>
+		<div id="mm7" class="sb7"></div>
+	</div>
+	<div id="box12" class="box">
+		<div id="mm1,1" class="sb1"></div>
+		<div id="mm2,2" class="sb2"></div>
+		<div id="mm3,3" class="sb3"></div>
+		<div id="mm4,4" class="sb4"></div>
+		<div id="mm5,5" class="sb5"></div>
+		<div id="mm6,6" class="sb6"></div>
+		<div id="mm7,7" class="sb7"></div>
+	</div>
+	<div id="box6" class="box" style="width:50px;
+			height:120px;"">
+		<div style="opacity:1;width:90%;left:10%;" class="sb7"></div>
+	</div>
+	<div id="box13" class="box">
+		<div id="y1" class="sb1"></div>
+		<div id="y2" class="sb2"></div>
+		<div id="y3" class="sb3"></div>
+		<div id="y4" class="sb4"></div>
+		<div id="y5" class="sb5"></div>
+		<div id="y6" class="sb6"></div>
+		<div id="y7" class="sb7"></div>
+	</div>
+	<div id="box14" class="box">
+		<div id="y1,1" class="sb1"></div>
+		<div id="y2,2" class="sb2"></div>
+		<div id="y3,3" class="sb3"></div>
+		<div id="y4,4" class="sb4"></div>
+		<div id="y5,5" class="sb5"></div>
+		<div id="y6,6" class="sb6"></div>
+		<div id="y7,7" class="sb7"></div>
+	</div>
+	<div id="box15" class="box">
+		<div id="y1,1,1" class="sb1"></div>
+		<div id="y2,2,2" class="sb2"></div>
+		<div id="y3,3,3" class="sb3"></div>
+		<div id="y4,4,4" class="sb4"></div>
+		<div id="y5,5,5" class="sb5"></div>
+		<div id="y6,6,6" class="sb6"></div>
+		<div id="y7,7,7" class="sb7"></div>
+	</div>
+	<div id="box16" class="box">
+		<div id="y1,1,1,1" class="sb1"></div>
+		<div id="y2,2,2,2" class="sb2"></div>
+		<div id="y3,3,3,3" class="sb3"></div>
+		<div id="y4,4,4,4" class="sb4"></div>
+		<div id="y5,5,5,5" class="sb5"></div>
+		<div id="y6,6,6,6" class="sb6"></div>
+		<div id="y7,7,7,7" class="sb7"></div>
+	</div>
+	</body>
+
+	<script>
+	var x = ["1111110","0110000","1101101","1111001","0110011","1011011","1011111","1110000","1111111","1111011"]		
+	
+		function run(){
+		 var today = new Date();
+		 var h = today.getHours();
+   		 var m = today.getMinutes();
+    	 var s = today.getSeconds();
+
+   		 if(h<12){
+   		 	document.getElementById("box11").innerHTML=":A";
+   		 }
+   		 else if(h==12){
+   		 	document.getElementById("box11").innerHTML=":P";
+   		 	
+   		 }
+   		 else{
+   		 	h=h-12;
+   		 	document.getElementById("box11").innerHTML=":P";
+   		 
+   		 }
+		 n=String(s);
+		 y=parseInt(n[0]);
+		 z=parseInt(n[1]);
+		 
+		 n1=String(m);
+		 y1=parseInt(n1[0]);
+		 z1=parseInt(n1[1]);
+
+		 n2=String(h);
+		 y2=parseInt(n2[0]);
+		 z2=parseInt(n2[1]);
+
+		 
+
+			
+
+		 	if(s>9){
+				for(var j=0;j<x[y].length;j++){
+					var ind = parseInt(x[y].charAt(j));
+					document.getElementById("sb"+(j+1)).style.opacity=ind;				
+					var ind1 = parseInt(x[z].charAt(j));
+					document.getElementById("sb"+(j+1)+","+(j+1)).style.opacity=ind1;				
+				
+				}
+			}
+			if(s<10){
+				for(var j=0;j<x[y].length;j++){
+					var ind = parseInt(x[0].charAt(j));
+					document.getElementById("sb"+(j+1)).style.opacity=ind;
+					var ind1 = parseInt(x[y].charAt(j));
+					document.getElementById("sb"+(j+1)+","+(j+1)).style.opacity=ind1;				
+				
+				}
+			}
+			if(m>9){
+				for(var j=0;j<x[y1].length;j++){
+					var ind = parseInt(x[y1].charAt(j));
+					document.getElementById("mb"+(j+1)).style.opacity=ind;				
+					var ind1 = parseInt(x[z1].charAt(j));
+					document.getElementById("mb"+(j+1)+","+(j+1)).style.opacity=ind1;				
+				
+				}
+			}
+			if(m<10){
+				for(var j=0;j<x[y1].length;j++){
+					var ind = parseInt(x[0].charAt(j));
+					document.getElementById("mb"+(j+1)).style.opacity=ind;
+					var ind1 = parseInt(x[y1].charAt(j));
+					document.getElementById("mb"+(j+1)+","+(j+1)).style.opacity=ind1;				
+				
+				}
+			}
+			if(h>9){
+				for(var j=0;j<x[y2].length;j++){
+					var ind = parseInt(x[y2].charAt(j));
+					document.getElementById("hb"+(j+1)).style.opacity=ind;				
+					var ind1 = parseInt(x[z2].charAt(j));
+					document.getElementById("hb"+(j+1)+","+(j+1)).style.opacity=ind1;				
+				
+				}
+			}
+			if(h<10){
+				for(var j=0;j<x[y2].length;j++){
+					var ind = parseInt(x[0].charAt(j));
+					document.getElementById("hb"+(j+1)).style.opacity=ind;
+					var ind1 = parseInt(x[y2].charAt(j));
+					document.getElementById("hb"+(j+1)+","+(j+1)).style.opacity=ind1;				
+				
+				}
+			}
+
+			//console.log("helloworld")
+			recall()
+			
+		}
+
+
+
+		function cdate(){
+		console.log("helloworld")
+		 var today = new Date();
+		 var ds = today.getDate();
+    	 var mms = today.getMonth()+1;
+    	 var year = today.getFullYear();
+    	 console.log(mms)
+    	 n4=String(ds);
+		 y4=parseInt(n4[0]);
+		 z4=parseInt(n4[1]);
+
+		 n5=String(mms);
+		 y5=parseInt(n5[0]);
+		 z5=parseInt(n5[1]);
+
+		 n3=String(year);
+		 y3=parseInt(n3[0]);
+		 z3=parseInt(n3[1]);
+		 x3=parseInt(n3[2]);
+		 v3=parseInt(n3[3]);
+
+			if(ds>9){
+				for(var j=0;j<x[y4].length;j++){
+					var ind = parseInt(x[y4].charAt(j));
+					document.getElementById("d"+(j+1)).style.opacity=ind;				
+					var ind1 = parseInt(x[z4].charAt(j));
+					document.getElementById("d"+(j+1)+","+(j+1)).style.opacity=ind1;				
+				
+				}
+			}
+			if(ds<10){
+				for(var j=0;j<x[y4].length;j++){
+					var ind = parseInt(x[0].charAt(j));
+					document.getElementById("d"+(j+1)).style.opacity=ind;
+					var ind1 = parseInt(x[y4].charAt(j));
+					document.getElementById("d"+(j+1)+","+(j+1)).style.opacity=ind1;				
+				
+				}
+			}
+			if(mms>9){
+				for(var j=0;j<x[y5].length;j++){
+					var ind = parseInt(x[y5].charAt(j));
+					document.getElementById("mm"+(j+1)).style.opacity=ind;				
+					var ind1 = parseInt(x[z5].charAt(j));
+					document.getElementById("mm"+(j+1)+","+(j+1)).style.opacity=ind1;				
+				
+				}
+			}
+			if(mms<10){
+				for(var j=0;j<x[y5].length;j++){
+					var ind = parseInt(x[0].charAt(j));
+					document.getElementById("mm"+(j+1)).style.opacity=ind;
+					var ind1 = parseInt(x[y5].charAt(j));
+					document.getElementById("mm"+(j+1)+","+(j+1)).style.opacity=ind1;				
+				
+				}
+			}
+
+		
+			for(var j=0;j<x[y3].length;j++){
+				var ind = parseInt(x[y3].charAt(j));
+				document.getElementById("y"+(j+1)).style.opacity=ind;				
+				var ind1 = parseInt(x[z3].charAt(j));
+				document.getElementById("y"+(j+1)+","+(j+1)).style.opacity=ind1;
+				var ind2 = parseInt(x[x3].charAt(j));
+				document.getElementById("y"+(j+1)+","+(j+1)+","+(j+1)).style.opacity=ind2;				
+				var ind3 = parseInt(x[v3].charAt(j));
+				document.getElementById("y"+(j+1)+","+(j+1)+","+(j+1)+","+(j+1)).style.opacity=ind3;				
+			
+			}
+			
+		}
+
+		function recall(){
+			setTimeout(run,1);
+			setTimeout(cdate,1);
+		}
+		
+		 
+			
+	</script>
+</html>

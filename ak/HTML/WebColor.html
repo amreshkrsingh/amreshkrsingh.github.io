@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebColors</title>
+	<script src="WebColors.js"></script>
+</head>
+<body onload="tables()">
+		<div id="main" onclick="alert('hello world');"></div>
+		<script>
+		console.log(webColors.colors[2]);
+		function tables(){
+			var tbl = document.createElement("table");
+			tbl.setAttribute("id","tabs");
+		for(var i=0;i<webColors.colors.length;i++){
+			var tar = document.createElement("tr");
+			var tad1 = document.createElement("td");
+			tad1.setAttribute("class","tabss");
+			var tad2 = document.createElement("td");
+			tad2.setAttribute("class","tabss");
+			tad1.innerText=webColors.colors[i].hex;
+			tad2.innerText=webColors.colors[i].color;
+			tad1.setAttribute ("style","background-Color:white");
+			tad2.setAttribute ("style","background-Color:"+webColors.colors[i].color);
+			tad2.addEventListener("click",changeBG,true);
+			tar.appendChild(tad1);
+			tar.appendChild(tad2);
+			tbl.appendChild(tar);
+		}
+document.getElementById('main').appendChild(tbl);
+}
+
+function changeBG(eve){
+	//alert(eve.target.color)
+	document.body.style.backgroundColor = eve.target.innerText;
+}
+
+	</script>
+
+
+</body>
+</html>

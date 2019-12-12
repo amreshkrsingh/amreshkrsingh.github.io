@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> CONTACT</title>
+<style type="text/css">
+	h1{
+		color:green;
+	}
+	.label{
+		font-size:20px;
+		color:yellow;
+	}
+	#p1{
+		height:600px;
+		width:800px;
+		background-color:red;
+		margin-left: 200px;
+		margin-top: 10px;
+		border-radius: 10px;
+		//display: none;
+	}
+	.button{
+		background-color: rgb(0, 191, 255);
+		border-radius: 50%;
+		margin-left: 80px;
+		margin-top: 50px;
+		height:40px;
+		width: 150px;
+		border-bottom: 1px solid rgb(23,34,54);
+	}
+	.d1{
+		margin-left: 200px;
+		margin-top: 90px;
+	}
+	#p2{
+		height:600px;
+		width:800px;
+		background-color:green;
+		margin-left: 200px;
+		margin-top: 10px;
+		border-radius: 10px;
+		display: none;
+	}
+	#image{
+		height: 100px;
+		width:100px;
+		border-radius: 50%;
+		margin-top: 20px;
+		margin-left: 200px;
+	}
+	#GoHome{
+		float: left;
+		margin-left: 380px;
+		margin-top: 50px;
+	}
+
+	#i1{
+		margin-left: 70px;
+	}
+	#i3{
+		margin-left: 50px;
+	}
+	#pop{
+		height:400px;
+		width: 500px;
+		margin-top: 50px;
+		margin-left: 400px;
+		background-color: yellow;
+		border-radius:10px;
+		display: none;
+	}
+	button{
+		height: 40px;
+		width: 80px;
+		background-color: red;
+		border-radius: 50%;
+		margin-left: 100px;
+		float:left;
+	}
+	#GomenuFromp4{
+		width: 150px;
+		height: 50px;
+		float:left;
+		font-size: 100%;
+		margin-left: 0px;
+		border-bottom: 8px solid green;
+	}
+	#GoSearchFromp4{
+		width: 150px;
+		height: 50px;
+		float:left;
+		font-size: 100%;
+		margin-left: 450px;
+		border-bottom: 8px solid rgb(82,32,41);
+	}
+	#save{
+		height: 40px;
+		width: 80px;
+		background-color: red;
+		border-radius: 50%;
+		//margin-left:150px;
+		//margin-top: 0px;
+		float: left;
+	}
+	#p3{
+		height:600px;
+		width:600px;
+		background-color:green;
+		margin-left: 300px;
+		margin-top: 10px;
+		border-radius: 10px;
+		display: none;
+
+	}
+	.d3{
+		position: absolute;
+		margin-left:90px;
+		margin-top: 50px;
+		border:1px solid red;
+		//font-size: 30px;
+	}
+	#listButton{
+		margin-top: 100px;
+		margin-left: 100px;
+		font-size: 30px;
+	}
+	
+	#hi1{
+		position: absolute;
+		width: 400px;
+		margin-left: 100px;
+		border: 1px solid red;
+		margin-top: 150px;
+		//left:400px;
+		//top:200px;
+	}
+	#hi2{
+		position: absolute;
+		width: 400px;
+		margin-left: 100px;
+		border: 1px solid red;
+		margin-top: 200px;
+	}
+	#hi3{
+		position: absolute;
+		width: 400px;
+		margin-left: 100px;
+		border: 1px solid red;
+		margin-top: 250px;
+
+	}
+	.hidden{
+		font-size: 200%;
+		font-color:red;
+		text-align: center;
+	}
+	#Gomenu{
+		position: absolute;
+		margin-left:160px;
+		width: 150px;
+		font-size: 200%;
+		border: 1px solid red;
+		margin-top: 100px;
+		background-color:rgb(27, 176, 252);
+		float: left;
+	}
+	#p4{
+		width: 750px;
+		height: 50px;
+		border-radius: 10px;
+		border:2px solid blue;
+		margin-left: 200px;
+		display:none;
+	}
+	#live{
+		border:1px solid black;
+		height: 100px;
+		margin-left: 65px
+	}
+	th,td{
+		height: 40px;
+		width: 200px;
+		background-color: green;
+		font-size: 100%;
+		color:blue;
+		border-radius: 10px;
+		//margin-left: 100px;
+		border:1px solid red;
+		text-align: center;
+	}
+	th{
+		background-color: red;
+	}
+	.d{
+		width: 50px;
+	}
+
+</style>
+<script type="text/javascript">
+	function myaddContact() {
+		document.getElementById('p1').style.display="none";
+		document.getElementById('p2').style.display="block";
+	}
+
+	function mysave(){
+		document.getElementById("pop").style.display="block";
+		document.getElementById('p2').style.display="none";
+		
+
+	}
+	var contacts = [];
+	function myAddYes(){
+
+		var name = document.getElementById('i1').value;
+		var phon = document.getElementById('i2').value;
+		var email = document.getElementById('i3').value;
+		var li= [];
+		li.push(name);
+		li.push(phon);
+		li.push(email);
+		contacts.push(li);
+		console.log(JSON.stringify(contacts));
+
+		document.getElementById('i1').value = "";
+		document.getElementById('i2').value = "";
+		document.getElementById('i3').value = "";
+		document.getElementById('p1').style.display="block";
+		document.getElementById("pop").style.display="none";
+	}
+	function no(){
+		document.getElementById('p1').style.display="block";
+		document.getElementById("pop").style.display="none";
+		document.getElementById('i1').value = "";
+		document.getElementById('i2').value = "";
+		document.getElementById('i3').value = "";
+	}
+	//yaha se peg 3 yani serch page ka kam
+	function mysearch(){
+		document.getElementById('p1').style.display="none";
+		//document.getElementById('pop').style.display="none";
+		document.getElementById('p3').style.display="block";
+	}
+	function myli() {
+		var len = contacts.length;
+		//console.log(len);
+		var sname = document.getElementById('a2').value;
+		for(var i = 0; i < len ; i++){
+			if(contacts[i][0]== sname){
+				document.getElementById('hi1').innerHTML = "NAME : "+ contacts[i][0];
+				document.getElementById('hi2').innerHTML = "MOBILE NO : " + contacts[i][1];
+				document.getElementById('hi3').innerHTML = "EMAIL ID : " + contacts[i][2];
+				break;
+			}
+		}
+	}
+	function mylist(){
+		var output = "";
+		//document.getElementById("live").innerHTML = "";
+		var len = contacts.length;
+		document.getElementById("p1").style.display="none";
+		document.getElementById('p4').style.display="block";
+
+		output += "<table><tr><th>gh</th><th>NAME</th><th>Phone Number</th><th>Email Id</th></tr>";
+		for (var i = 0 ; i<contacts.length; i++) {
+			for(var j = 0 ; j<1 ; j++){
+				output+= "<tr><td>"+contacts[i][j]+"</td><td>"+contacts[i][j+1]+"</td><td>"+contacts[i][j+2]+"</td></tr>";
+			}
+		}
+		output+="</table>";
+		document.getElementById("live").innerHTML = output;
+	}
+	function mainMenu(){
+		document.getElementById("p1").style.display="block";
+		document.getElementById('p3').style.display="none";
+	}
+
+	<!--page 4 for search box -->
+	function HomeMenu(){
+		document.getElementById("p1").style.display="block";
+		document.getElementById('p2').style.display="none";
+	}
+	function mainMenu1(){
+		document.getElementById("p1").style.display="block";
+		document.getElementById('p4').style.display="none";
+	}
+	function mainSearch1(){
+		document.getElementById("p3").style.display="block";
+		document.getElementById('p4').style.display="none";
+	}
+
+</script>
+	
+</head>
+<body>
+<div id = "p1">
+		<h1><marquee>CONTACT DATAS</marquee></h1>
+	<div>
+		<button id="addContact" class="button" onclick="myaddContact()">ADD CONTACT</button>
+		<button class="button" onclick="mysearch()">SEARCH</button>
+		<button class="button" onclick="mylist()">LIST</button>
+	</div>
+</div>
+
+
+
+
+
+
+<div id = "p2">
+	
+			<div><img src="d.png" id="image"/></div>
+			<button id="save" class="button" onclick="mysave()">save</button>
+			<button id = "GoHome" onclick="HomeMenu()">HOME</button>
+
+				<div class="d1">
+					<label class="label" id="s1">Name:</label>
+					<input type="text" class="text" id="i1"/>
+				</div>
+				<div class="d1">
+				<label class="label"  id="s2">Phone Number:</label>
+				<input type="number" class="text"  id="i2"/>
+				</div>
+				<div class="d1">
+				<label class="label"  id="s3">Email ID:</label>
+				<input type="text" class="text"  id="i3"/>
+				</div>
+
+			
+</div>
+		<div id = "pop"> 
+			<h1>ARE YOU SURE TO SAVE THE CONTACT ?</h1>
+			<button id="YES" class="bP" onclick="myAddYes()">YES</button>
+			<button id="NO" class="bP" onclick="no()">NO</button>
+		</div>
+
+
+<div id = "p3">
+			<div class="d3">
+			<label class="label"  id="cl">Search Name : </label>
+				<input type="text" class="text"  id="a2" placeholder="Contact Name" />
+			</div>
+				<button id="listButton" class = "button" onclick="myli()">Search</button>
+				<button id = "Gomenu" onclick="mainMenu()">HOME</button>
+				<div id="hi1" class="hidden"></div>
+				<div id = "hi2" ; class="hidden"></div>
+				<div id = "hi3" ; class="hidden"></div>
+		
+</div>
+<!-- page char for show list;-->
+<div>
+	
+	<div id = "p4">
+			<button id = "GomenuFromp4" onclick="mainMenu1()">Back To Home</button>
+			<button id = "GoSearchFromp4" onclick="mainSearch1()">Go For Search</button>
+			<div id = "live"></div>	
+	</div>
+	
+</div>
+
+</body>
+</html>

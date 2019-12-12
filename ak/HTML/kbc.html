@@ -1,0 +1,171 @@
+<html>
+	<head>
+		<style>
+		body{
+			background-image:url("imag/ak/kbc2.jpg");
+			background-size:cover;
+		
+		}
+		#money{
+			font-size:200%;
+			height:150px;
+			width:500px;
+			border:3px solid red;
+			margin-left:100px;
+			margin-top:300px;
+			border-radius:50%;
+			background-color:lightgreen;
+			float:left;
+			text-align:center;
+		}
+		
+		#next{
+			font-size:100%;
+			height:70px;
+			width:200px;
+			border:3px solid red;
+			margin-left:100px;
+			border-radius:50%;
+			background-color:yellow;
+			text-align:center;
+		}
+		#score{
+			font-size:200%;
+			height:150px;
+			width:500px;
+			border:3px solid red;
+			margin-top:300px;
+			margin-left:1250px;
+			border-radius:50%;
+			background-color:lightgreen;
+			text-align:center;
+		}
+		
+		h1{
+		margin-top:0px;
+		color:rgb(173,255,47);
+		text-align:center;
+		background-color:red;
+		}
+		.ak{
+			font-size:200%;
+			height:80px;
+			width:442px;
+			border:2px solid red;
+			background-color:white;
+			float:left;
+			margin-top:20px;
+			
+		}
+		#a{
+			font-size:200%;
+			height:100px;
+			width:1803px;
+			border:2px solid red;
+			background-color:white;
+			margin-top:150px;
+		}
+		#star{height:500px;width:52px;border:1px solid red;margin-top:-500px;}
+		.sta{height:50px;width:50px;border:1px solid green;border-radius:50%;background-color:red;text-align:center;position:relative}
+		</style>
+		<script>
+		var questions = [
+			{
+				"q":"what is color of sky?",
+				"o1":"blue",
+				"o2":"red",
+				"o3":"white",
+				"o4":"none",
+				"a":"blue",
+				"money":100
+			},
+			{
+				"q":"what is color of shirt?",
+				"o1":"blue",
+				"o2":"red",
+				"o3":"white",
+				"o4":"none",
+				"a":"red",
+				"money":1000
+			},
+			{
+				"q":"what is the color of laptop?",
+				"o1":"blue",
+				"o2":"red",
+				"o3":"black",
+				"o4":"none",
+				"a":"black",
+				"money":50000
+			},
+			{
+				"q":"what is the name of mango in tamil?",
+				"o1":"mamblm",
+				"o2":"red",
+				"o3":"black",
+				"o4":"none",
+				"a":"mamblm",
+				"money":100000
+			}
+			
+			
+		];
+		index = 0;
+		function setQuestion(questionBundle){
+			document.getElementById("a").innerHTML = "Q"+(index+1)+" "+questionBundle.q;
+			document.getElementById("op1").innerHTML = questionBundle.o1;
+			document.getElementById("op2").innerHTML = questionBundle.o2;
+			document.getElementById("op3").innerHTML = questionBundle.o3;
+			document.getElementById("op4").innerHTML = questionBundle.o4;
+			document.getElementById("money").innerHTML = questionBundle.money;
+			document.getElementById("star"+(index+1)).style.color:yellow;
+		}
+		function check(optionId){
+			if(index < questions.length){
+				var ans = document.getElementById(optionId).innerHTML; 
+				if(questions[index].a === ans){
+					document.getElementById(optionId).style.background = "green";
+					document.getElementById("score").innerHTML = +document.getElementById("score").innerHTML + questions[index].money;
+				}else{
+					document.getElementById(optionId).style.background = "red";
+				}
+			}
+		}
+		function next(){
+			index++;
+			var optlist = document.getElementsByClassName("ak");
+			for(var i = 0; i < optlist.length; i++){
+				optlist[i].style.background = "white";
+			}
+			if(index < questions.length){
+				setQuestion(questions[index]);
+			}
+		}
+		function nexta(){
+			index++;
+			var optlist = document.getElementByClassName("");
+			for(var i = 0; i){
+			
+			}
+		}
+		</script>
+	</head>
+	
+	<body onload="setQuestion(questions[index]);">
+	
+		<h1><marquee>K_B_C</marquee></h1>
+		<div id="money"></div>
+		<div id="score">0</div>
+		<button id="next" onclick ="next();">NEXT QUESTION</button>
+		<div id="star">
+			<div id="star1" class="sta">1</div><div id="star2" class="sta">2</div><div id="star3" class="sta">3</div>
+			<div id="star4" class="sta">4</div><div id="star5" class="sta">5</div><div id="star6" class="sta">6</div>
+			<div id="star7" class="sta">7</div><div id="star8" class="sta">8</div><div id="star9" class="sta">9</div>
+			<div id="star10" class="sta">10</div>
+		</div>
+		<div id="a"></div>
+		<div class="ak" id="op1" onclick="check('op1');"></div>
+		<div class="ak" id="op2" onclick="check('op2');"></div>
+		<div class="ak" id="op3" onclick="check('op3');"></div>
+		<div class="ak" id="op4" onclick="check('op4');"></div>
+	</body>
+</html>
