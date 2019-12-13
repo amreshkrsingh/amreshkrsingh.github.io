@@ -29,12 +29,12 @@ products = [
   {
 	  "name":"Wine",
 	  "items":[
-		{"pid" : "p1","name" : "Sonoma Coasts","brand" : "La Crema","price" : 18,"image" : "img/mw1.jpg"},
-		{"pid" : "p2","name" : "California Merlot","brand" : "Blackstone Winery","price" : 8,"image" : "img/mw2.jpg"},
-		{"pid" : "p3","name" : "Napa Valley Fume ","brand" : "Robert Mondavi Winery","price" : 8,"image" : "img/mw3.jpg"},
-		{"pid" : "p4","name" : "Australia Shiraz","brand" : "Jacob’s Creek","price" : 15,"image" : "img/mw4.jpg"},
-		{"pid" : "p5","name" : "Mendoza Malbec","brand" : "Alamos","price" : 9,"image" : "img/mw5.jpg"},
-		{"pid" : "p6","name" : "Mâcon-Villages","brand" : "Louis Jadot","price" : 14,"image" : "img/mw6.jpg"}
+		{"pid" : "p1","name" : "Sonoma Coasts","brand" : "La Crema","price" : 18,"image" : "Img/mw1.jpg"},
+		{"pid" : "p2","name" : "California Merlot","brand" : "Blackstone Winery","price" : 8,"image" : "Img/mw2.jpg"},
+		{"pid" : "p3","name" : "Napa Valley Fume ","brand" : "Robert Mondavi Winery","price" : 8,"image" : "Img/mw3.jpg"},
+		{"pid" : "p4","name" : "Australia Shiraz","brand" : "Jacob’s Creek","price" : 15,"image" : "Img/mw4.jpg"},
+		{"pid" : "p5","name" : "Mendoza Malbec","brand" : "Alamos","price" : 9,"image" : "Img/mw5.jpg"},
+		{"pid" : "p6","name" : "Mâcon-Villages","brand" : "Louis Jadot","price" : 14,"image" : "Img/mw6.jpg"}
 	  ]
   },
   {
